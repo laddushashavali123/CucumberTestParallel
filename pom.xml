@@ -30,17 +30,17 @@
                 <version>2.19.1</version>
                 <configuration>
                     <forkCount>2</forkCount>
-                    <reuseForks>false</reuseForks>
+                    <reuseForks>true</reuseForks>
                     <includes>
                         <include>**/*IT.java</include>
                     </includes>
                     <runOrder>alphabetical</runOrder>
                     <argLine>-Duser.language=en</argLine>
-                    <argLine>-Xmx512m</argLine>
-                    <argLine>-XX:MaxPermSize=256m</argLine>
+                    <argLine>-Xmx1024m</argLine>
+                    <argLine>-XX:MaxPermSize=512m</argLine>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <systemPropertyVariables>
-                        <!--<cucumber.options>&#45;&#45;tags @example</cucumber.options>-->
+                        <cucumber.options>--tags @example</cucumber.options>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
@@ -84,6 +84,12 @@
     </build>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.packagecloud.maven.wagon/maven-packagecloud-wagon -->
+        <dependency>
+            <groupId>io.packagecloud.maven.wagon</groupId>
+            <artifactId>maven-packagecloud-wagon</artifactId>
+            <version>0.0.6</version>
+        </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
